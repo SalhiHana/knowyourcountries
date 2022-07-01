@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="UserApp" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="rbO-wY-Mg1" id="4aW-b9-xge"/>
+                <outlet property="table" destination="vi6-F3-XUa" id="qDR-ps-Z6X"/>
+                <outlet property="tableViewSafeAreaTopConstraint" destination="w4G-uc-NY7" id="F0r-gB-zZu"/>
+                <outlet property="tableViewSearchBarTopConstraint" destination="jov-ZU-beU" id="g5D-Fg-Tdr"/>
+                <outlet property="view" destination="c6A-HO-L0i" id="tTU-AC-kb6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="c6A-HO-L0i">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search ..." translatesAutoresizingMaskIntoConstraints="NO" id="rbO-wY-Mg1">
+                    <rect key="frame" x="10.5" y="44" width="393" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vi6-F3-XUa">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="zNa-Kk-RZC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zNa-Kk-RZC" firstAttribute="bottom" secondItem="vi6-F3-XUa" secondAttribute="bottom" id="5mE-11-bAg"/>
+                <constraint firstItem="rbO-wY-Mg1" firstAttribute="width" secondItem="c6A-HO-L0i" secondAttribute="width" multiplier="0.95" id="HBe-PA-Uuq"/>
+                <constraint firstItem="rbO-wY-Mg1" firstAttribute="top" secondItem="zNa-Kk-RZC" secondAttribute="top" id="SP9-0E-GwT"/>
+                <constraint firstItem="zNa-Kk-RZC" firstAttribute="trailing" secondItem="vi6-F3-XUa" secondAttribute="trailing" id="T7n-dz-Ysg"/>
+                <constraint firstItem="rbO-wY-Mg1" firstAttribute="centerX" secondItem="c6A-HO-L0i" secondAttribute="centerX" id="XCz-6M-eeD"/>
+                <constraint firstItem="vi6-F3-XUa" firstAttribute="top" secondItem="rbO-wY-Mg1" secondAttribute="bottom" id="jov-ZU-beU"/>
+                <constraint firstItem="vi6-F3-XUa" firstAttribute="top" secondItem="zNa-Kk-RZC" secondAttribute="top" id="w4G-uc-NY7"/>
+                <constraint firstItem="vi6-F3-XUa" firstAttribute="leading" secondItem="zNa-Kk-RZC" secondAttribute="leading" id="whK-bc-4up"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="jov-ZU-beU"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="170" y="119"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
