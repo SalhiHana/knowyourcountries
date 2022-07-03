@@ -37,6 +37,9 @@ class CountryDetailViewController: UIViewController {
         bordersCollectionView.delegate = self
         bordersCollectionView.dataSource = self
         bordersCollectionView.register(UINib(nibName:"CountryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"CountryCollectionViewCell")
+        
+        bordersCollectionView.isHidden = country?.borders == nil
+        
     }
     
     func configure() {
