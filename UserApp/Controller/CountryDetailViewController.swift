@@ -82,16 +82,15 @@ extension CountryDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if !borderIsClickable { return } same as below
         guard borderIsClickable else { return }
-        if let countryDetailViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryDetailViewController") as? CountryDetailViewController {
-            guard
-                let selectedBorder = country?.borders?[indexPath.row],
-                let countryToOpenIndex = countries.firstIndex(where: { $0.alpha3Code == selectedBorder }) else { return }
-            countryDetailViewController.country = countries[countryToOpenIndex]
-            countryDetailViewController.countries = countries
-            countryDetailViewController.borderIsClickable = false
-            
-            
-            navigationController?.pushViewController(countryDetailViewController, animated: true)
-        }
+        let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
+        guard
+            let selectedBorder = country?.borders?[indexPath.row],
+            let countryToOpenIndex = countries.firstIndex(where: { $0.alpha3Code == selectedBorder }) else { return }
+        countryDetailViewController.country = countries[countryToOpenIndex]
+        countryDetailViewController.countries = countries
+        countryDetailViewController.borderIsClickable = false
+        
+        
+        navigationController?.pushViewController(countryDetailViewController, animated: true)
     }
 }

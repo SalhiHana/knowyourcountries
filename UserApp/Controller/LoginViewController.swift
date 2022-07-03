@@ -116,6 +116,7 @@ class LoginViewController: UIViewController {
         let welcomeViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: welcomeViewController)
         navigationController.modalPresentationStyle = .fullScreen
+        UserDefaults.standard.set(true, forKey: SceneDelegate.isLoggedInKey)
         self.present(navigationController, animated: true, completion: nil)
     }
 }

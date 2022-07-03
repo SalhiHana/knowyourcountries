@@ -50,7 +50,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func didSelectLogout() {
-        navigationController?.popViewController(animated: true)
+        UserDefaults.standard.set(false, forKey: SceneDelegate.isLoggedInKey)
         dismiss(animated: true, completion: nil)
     }
     
@@ -92,11 +92,11 @@ extension WelcomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let countryDetailViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryDetailViewController") as? CountryDetailViewController {
-            countryDetailViewController.country = isSearching ? filteredCountries[indexPath.row] : countries[indexPath.row]
-            countryDetailViewController.countries = countries
-            navigationController?.pushViewController(countryDetailViewController, animated: true)
-        }
+        let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
+        countryDetailViewController.country = isSearching ? filteredCountries[indexPath.row] : countries[indexPath.row]
+        countryDetailViewController.countries = countries
+        navigationController?.pushViewController(countryDetailViewController, animated: true)
+        
     }
 }
 

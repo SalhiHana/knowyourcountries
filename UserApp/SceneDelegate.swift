@@ -10,17 +10,30 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    static let isLoggedInKey = "isLoggedInKey"
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let myViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-            window.rootViewController = myViewController
+            window.rootViewController = firstViewController
             self.window = window
             window.makeKeyAndVisible()
         }
 
+    }
+    
+    private var firstViewController: UIViewController {
+        let isLoggedIn = UserDefaults.standard.bool(forKey: SceneDelegate.isLoggedInKey)
+        if isLoggedIn {
+            let welcomeViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
+            let navigationController = UINavigationController(rootViewController: welcomeViewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            return navigationController
+        } else {
+            return LoginViewController(nibName: "LoginViewController", bundle: nil)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
