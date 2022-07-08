@@ -25,15 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private var firstViewController: UIViewController {
-        let isLoggedIn = UserDefaults.standard.bool(forKey: SceneDelegate.isLoggedInKey)
-        if isLoggedIn {
-            let welcomeViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
-            let navigationController = UINavigationController(rootViewController: welcomeViewController)
-            navigationController.modalPresentationStyle = .fullScreen
-            return navigationController
-        } else {
-            return LoginViewController(nibName: "LoginViewController", bundle: nil)
-        }
+        let welcomeViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
+        let navigationController = UINavigationController(rootViewController: welcomeViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        return navigationController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

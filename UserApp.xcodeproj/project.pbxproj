@@ -18,7 +18,7 @@
 		AA4BFD69285D27CD00C21A50 /* CountryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */; };
 		AA88F6CC286CFA1200A19AD3 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */; };
 		AA88F6CD286CFA1200A19AD3 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */; };
-		AAEA9F1428356FCD00550A68 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA9F1328356FCD00550A68 /* Data.swift */; };
+		AAEA9F1428356FCD00550A68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA9F1328356FCD00550A68 /* User.swift */; };
 		AAEB0079286CF66000CBA64F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB0078286CF66000CBA64F /* LoginViewController.xib */; };
 		AAEB007B286CF67000CBA64F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007A286CF67000CBA64F /* RegisterViewController.xib */; };
 		AAEB007D286CF69400CBA64F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */; };
@@ -44,7 +44,7 @@
 		AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
-		AAEA9F1328356FCD00550A68 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AAEA9F1328356FCD00550A68 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AAEB0078286CF66000CBA64F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		AAEB007A286CF67000CBA64F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -87,17 +87,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AAEB0077286CF64200CBA64F /* XIB */ = {
-			isa = PBXGroup;
-			children = (
-				AAEB0078286CF66000CBA64F /* LoginViewController.xib */,
-				AAEB007A286CF67000CBA64F /* RegisterViewController.xib */,
-				AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */,
-				AAEB007E286CF6AD00CBA64F /* CountryDetailViewController.xib */,
-			);
-			path = XIB;
-			sourceTree = "<group>";
-		};
 		AAF2F5C92817314B0089BC66 = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +114,6 @@
 				AAF2F5ED2818623B0089BC66 /* View */,
 				AAF2F5EC281862290089BC66 /* Controller */,
 				AAF2F5E12817314C0089BC66 /* Assets.xcassets */,
-				AAF2F5E32817314C0089BC66 /* LaunchScreen.storyboard */,
 				AAF2F5E62817314C0089BC66 /* Info.plist */,
 				AAF2F5DE2817314B0089BC66 /* UserApp.xcdatamodeld */,
 			);
@@ -135,16 +123,13 @@
 		AAF2F5EC281862290089BC66 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AAEB0077286CF64200CBA64F /* XIB */,
 				AAF2F5D92817314B0089BC66 /* LoginViewController.swift */,
 				AA1C7F2F282DA6AF00E951DF /* RegisterViewController.swift */,
 				AA2F7474283E8D7900332A9C /* WelcomeViewController.swift */,
 				AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */,
-				AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */,
 				AA103154284D346400D1183D /* CountryManager.swift */,
 				AA3D7F3728525FAF00FBBEB7 /* CountryDetailViewController.swift */,
 				AA4BFD66285D27CD00C21A50 /* CountryCollectionViewCell.swift */,
-				AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,6 +137,13 @@
 		AAF2F5ED2818623B0089BC66 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAEB0078286CF66000CBA64F /* LoginViewController.xib */,
+				AAEB007A286CF67000CBA64F /* RegisterViewController.xib */,
+				AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */,
+				AAEB007E286CF6AD00CBA64F /* CountryDetailViewController.xib */,
+				AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */,
+				AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */,
+				AAF2F5E32817314C0089BC66 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,7 +151,7 @@
 		AAF2F5EE2818625E0089BC66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAEA9F1328356FCD00550A68 /* Data.swift */,
+				AAEA9F1328356FCD00550A68 /* User.swift */,
 				AA103152284C498A00D1183D /* Country.swift */,
 			);
 			name = Model;
@@ -288,7 +280,7 @@
 				AAF2F5E02817314B0089BC66 /* UserApp.xcdatamodeld in Sources */,
 				AA4BFD68285D27CD00C21A50 /* CountryCollectionViewCell.swift in Sources */,
 				AA103153284C498A00D1183D /* Country.swift in Sources */,
-				AAEA9F1428356FCD00550A68 /* Data.swift in Sources */,
+				AAEA9F1428356FCD00550A68 /* User.swift in Sources */,
 				AA3D7F3828525FB000FBBEB7 /* CountryDetailViewController.swift in Sources */,
 				AA1C7F30282DA6AF00E951DF /* RegisterViewController.swift in Sources */,
 				AAF2F5DA2817314B0089BC66 /* LoginViewController.swift in Sources */,
