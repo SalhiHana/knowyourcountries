@@ -72,6 +72,9 @@ class WelcomeViewController: UIViewController {
     func presentLoginView(animated: Bool) {
         let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         loginViewController.modalPresentationStyle = .fullScreen
+        if animated {
+            loginViewController.modalTransitionStyle = .crossDissolve
+        }
         navigationController?.present(loginViewController, animated: animated)
     }
     
