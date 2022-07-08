@@ -18,11 +18,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTF: UITextField!
     @IBOutlet private weak var rewritePasswordTextField: UITextField!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")
-              
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "")        
     }
     
     func isValidEmail() -> Bool {
