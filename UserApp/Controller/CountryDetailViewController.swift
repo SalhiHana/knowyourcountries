@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class CountryDetailViewController: UIViewController {
     @IBOutlet private weak var nameStackView: UIStackView!
@@ -25,7 +26,8 @@ class CountryDetailViewController: UIViewController {
     
     @IBOutlet private weak var borderViewSeparator: UIView!
     @IBOutlet private weak var borderView: UIView!
-    @IBOutlet var bordersCollectionView: UICollectionView!
+    @IBOutlet private weak var bordersCollectionView: UICollectionView!
+    @IBOutlet private weak var mapView: MKMapView!
     
     var country: Country?
     var countries: Countries = []
@@ -49,14 +51,57 @@ class CountryDetailViewController: UIViewController {
             countryFlagImageView.setImageWithSDWeb(stringUrl: country.flags.png)
             nameLabel.text = country.name
             capitalLabel.text = country.capital
-            populationLabel.text = String(country.population)
+            populationLabel.text = country.population.formatted()
             regionLabel.text = country.region.rawValue
             demonymLabel.text = country.demonym
-            areaLabel.text = String(country.area ?? 0.0)
+            areaLabel.text = country.area?.formatted()
             timezonesLabel.text = country.timezones.joined(separator: ", ")
             callingcodesLabel.text = country.callingCodes.joined(separator: ", ")
             languagesLabel.text = country.languages.compactMap({ $0.name }).joined(separator: ", ")
             currenciesLabel.text = country.currencies?.compactMap({ $0.name }).joined(separator: ", ")
+            
+            setupMapView()
+            setupImageView()
+        }
+    }
+    
+    func setupImageView() {
+        countryFlagImageView.layer.borderColor = UIColor(named: "primaryColor")?.cgColor
+        countryFlagImageView.layer.borderWidth = 1
+    }
+    
+    func setupMapView() {
+        guard let country = country else { return }
+        
+        let countrySearchRequest = MKLocalSearch.Request()
+        countrySearchRequest.naturalLanguageQuery = country.name
+        
+        let capitalSearchRequest = MKLocalSearch.Request()
+        capitalSearchRequest.naturalLanguageQuery = country.capital
+        
+        let capitalSearch = MKLocalSearch(request: capitalSearchRequest)
+        let countrySearch = MKLocalSearch(request: countrySearchRequest)
+        
+        countrySearch.start { response, error in
+            guard let response = response else {
+                print("Error: \(error?.localizedDescription ?? "Unknown error").")
+                return
+            }
+            
+            capitalSearch.start { secondResponse, secondError in
+                guard let responsee = secondResponse else {
+                    print("Error: \(secondError?.localizedDescription ?? "Unknown error").")
+                    return
+                }
+                
+                let capitalAnnotation = MKPointAnnotation()
+                capitalAnnotation.title = country.capital
+                capitalAnnotation.coordinate = CLLocationCoordinate2D(latitude: responsee.boundingRegion.center.latitude, longitude: responsee.boundingRegion.center.longitude)
+                self.mapView.setRegion(response.boundingRegion, animated: true)
+                self.mapView.addAnnotation(capitalAnnotation)
+            }
+            
+            self.mapView.setRegion(response.boundingRegion, animated: true)
         }
     }
     
@@ -83,7 +128,7 @@ extension CountryDetailViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        if !borderIsClickable { return } same as below
+        //  if !borderIsClickable { return } same as below
         guard borderIsClickable else { return }
         let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
         guard
@@ -95,3 +140,4 @@ extension CountryDetailViewController: UICollectionViewDelegate, UICollectionVie
         navigationController?.pushViewController(countryDetailViewController, animated: true)
     }
 }
+

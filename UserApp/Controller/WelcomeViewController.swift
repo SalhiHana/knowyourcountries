@@ -60,7 +60,7 @@ class WelcomeViewController: UIViewController {
         navigationItem.title = "Country List"
         
         let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "primaryColor")]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "primaryColor") ?? UIColor()]
 
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
@@ -117,9 +117,8 @@ extension WelcomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
-        countryDetailViewController.country = isSearching ? filteredCountries[indexPath.row] : countries[indexPath.row]
+         countryDetailViewController.country = isSearching ? filteredCountries[indexPath.row] : countries[indexPath.row]
         countryDetailViewController.countries = countries
         navigationController?.pushViewController(countryDetailViewController, animated: true)
         
@@ -131,6 +130,7 @@ extension WelcomeViewController: CountryManagerDelegate {
     func didFetchCountries(_ countryManager: CountryManager, countries: Countries) {
         DispatchQueue.main.async {
             self.countries = countries
+            self.filteredCountries = countries
             self.table.reloadData()
         }
     }
