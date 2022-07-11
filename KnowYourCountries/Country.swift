@@ -1,6 +1,6 @@
 //
 //  Country.swift
-//  UserApp
+//  KnowYourCountries
 //
 //  Created by Hana Salhi on 2022-06-04.
 //

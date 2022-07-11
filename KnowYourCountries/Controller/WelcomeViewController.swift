@@ -1,6 +1,6 @@
 //
 //  WelcomeViewController.swift
-//  UserApp
+//  KnowYourCountries
 //
 //  Created by Hana Salhi on 2022-05-25.
 //
