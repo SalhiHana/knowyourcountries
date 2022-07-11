@@ -12,11 +12,9 @@ class CountryTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var avatarImageView: UIImageView?
     @IBOutlet private weak var titleLabel: UILabel?
-    @IBOutlet private weak var subTitleLabel: UILabel?
     
     func configure(country: Country) {
         self.titleLabel?.text = country.name
-        self.subTitleLabel?.text = country.capital
         avatarImageView?.setImageWithSDWeb(stringUrl: country.flags.png)
     }
 }

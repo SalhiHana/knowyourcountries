@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,6 +38,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="emailTextEditingChanged:" destination="-1" eventType="editingChanged" id="2pb-EH-goB"/>
                             </connections>
@@ -67,7 +73,7 @@
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-gx-t5M">
                     <rect key="frame" x="103.5" y="740.5" width="207" height="51.5"/>
-                    <color key="backgroundColor" red="1" green="0.38075004579999999" blue="0.090874964040000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" name="primaryColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zeh-gx-t5M" secondAttribute="height" multiplier="4:1" id="2pc-K6-vCp"/>
                     </constraints>
@@ -83,6 +89,11 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="signUpButtonPressed:" destination="-1" eventType="touchUpInside" id="UBN-1V-HZV"/>
                     </connections>
@@ -127,6 +138,9 @@
         <image name="Globe Image" width="1350" height="2400"/>
         <image name="Logo" width="512" height="512"/>
         <image name="xmark.app" catalog="system" width="128" height="114"/>
+        <namedColor name="primaryColor">
+            <color red="0.034000000000000002" green="0.112" blue="0.14699999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

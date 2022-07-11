@@ -50,12 +50,20 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(didSelectLogout))
+        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style: .plain, target: self, action: #selector(didSelectLogout))
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
         navigationItem.rightBarButtonItem = searchButton
         navigationItem.leftBarButtonItem = logoutButton
         
+        navigationController?.navigationBar.tintColor = UIColor(named: "primaryColor")
+                
         navigationItem.title = "Country List"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "primaryColor")]
+
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
     }
     
     @objc func didSelectLogout() {
@@ -105,7 +113,7 @@ extension WelcomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

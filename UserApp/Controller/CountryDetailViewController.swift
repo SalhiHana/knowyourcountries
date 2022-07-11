@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class CountryDetailViewController: UIViewController {
+    @IBOutlet weak private var nameStackView: UIStackView!
     
     @IBOutlet weak private var countryFlagImageView: UIImageView!
     @IBOutlet weak private var nameLabel: UILabel!
@@ -27,13 +28,12 @@ class CountryDetailViewController: UIViewController {
     
     var country: Country?
     var countries: Countries = []
-
+    
     var borderIsClickable = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        
         bordersCollectionView.delegate = self
         bordersCollectionView.dataSource = self
         bordersCollectionView.register(UINib(nibName:"CountryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"CountryCollectionViewCell")
@@ -83,7 +83,7 @@ extension CountryDetailViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if !borderIsClickable { return } same as below
+        //        if !borderIsClickable { return } same as below
         guard borderIsClickable else { return }
         let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
         guard
@@ -91,9 +91,7 @@ extension CountryDetailViewController: UICollectionViewDelegate, UICollectionVie
             let countryToOpenIndex = countries.firstIndex(where: { $0.alpha3Code == selectedBorder }) else { return }
         countryDetailViewController.country = countries[countryToOpenIndex]
         countryDetailViewController.countries = countries
-        countryDetailViewController.borderIsClickable = false
-        
-        
+        countryDetailViewController.borderIsClickable = false  
         navigationController?.pushViewController(countryDetailViewController, animated: true)
     }
 }

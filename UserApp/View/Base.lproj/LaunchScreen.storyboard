@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Know Your Countries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec2-eQ-F8l">
                                 <rect key="frame" x="36.5" y="426.5" width="341.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="System Font" pointSize="39"/>
-                                <color key="textColor" red="0.93103360823662484" green="1" blue="0.78081019249791117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.92941176470588238" green="1" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
