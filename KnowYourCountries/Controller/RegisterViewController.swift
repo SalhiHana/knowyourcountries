@@ -51,12 +51,14 @@ class RegisterViewController: UIViewController {
         return rewritePasswordText == passwordText
     }
     
-    func presentAlert(message: String) {
-        let alert = UIAlertController(title: "Validation Error", message: message, preferredStyle: .alert)
+    func presentAlert(alertTitle: String = "Validation Error", message: String, secondButtonTitle: String = "", secondButtonAction: ((UIAlertAction) -> Void)? = nil ,isSingleButton: Bool = true) {
+        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        if !isSingleButton {
+            alert.addAction(UIAlertAction(title: secondButtonTitle, style: .default, handler: secondButtonAction))
+        }
         present(alert, animated: true)
     }
-    
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
         let isValidEmail = isValidEmail()
@@ -71,15 +73,18 @@ class RegisterViewController: UIViewController {
             self.presentAlert(message: "Please enter a password.")
         } else if !isValidRewritePassword() {
             self.presentAlert(message: "Please rewrite the similar password.")
-        }
-        
-        let user = User()
-        user.email = emailTextField.text ?? ""
-        user.password = passwordTF.text ?? ""
-        if !emailAlreadyExists() {
-            save(data: user)
         } else {
-            presentAlert(message: "Email Already Exists, Please choose another one! ")
+            let user = User()
+            user.email = emailTextField.text ?? ""
+            user.password = passwordTF.text ?? ""
+            if !emailAlreadyExists() {
+                save(data: user)
+                presentAlert(alertTitle: "Success", message: "Registration Successfull", secondButtonTitle: "Go To Login", secondButtonAction: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }, isSingleButton: false)
+            } else {
+                presentAlert(message: "Email Already Exists, Please choose another one! ")
+            }
         }
     }
     
