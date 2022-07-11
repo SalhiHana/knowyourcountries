@@ -9,21 +9,22 @@ import Foundation
 import UIKit
 
 class CountryDetailViewController: UIViewController {
-    @IBOutlet weak private var nameStackView: UIStackView!
+    @IBOutlet private weak var nameStackView: UIStackView!
     
-    @IBOutlet weak private var countryFlagImageView: UIImageView!
-    @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak private var capitalLabel: UILabel!
-    @IBOutlet weak private var populationLabel: UILabel!
-    @IBOutlet weak private var regionLabel: UILabel!
-    @IBOutlet weak private var demonymLabel: UILabel!
-    @IBOutlet weak private var areaLabel: UILabel!
-    @IBOutlet weak private var timezonesLabel: UILabel!
-    @IBOutlet weak private var callingcodesLabel: UILabel!
-    @IBOutlet weak private var languagesLabel: UILabel!
-    @IBOutlet weak private var currenciesLabel: UILabel!
-    @IBOutlet weak private var independantLabel: UILabel!
+    @IBOutlet private weak var countryFlagImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var capitalLabel: UILabel!
+    @IBOutlet private weak var populationLabel: UILabel!
+    @IBOutlet private weak var regionLabel: UILabel!
+    @IBOutlet private weak var demonymLabel: UILabel!
+    @IBOutlet private weak var areaLabel: UILabel!
+    @IBOutlet private weak var timezonesLabel: UILabel!
+    @IBOutlet private weak var callingcodesLabel: UILabel!
+    @IBOutlet private weak var languagesLabel: UILabel!
+    @IBOutlet private weak var currenciesLabel: UILabel!
     
+    @IBOutlet private weak var borderViewSeparator: UIView!
+    @IBOutlet private weak var borderView: UIView!
     @IBOutlet var bordersCollectionView: UICollectionView!
     
     var country: Country?
@@ -38,7 +39,8 @@ class CountryDetailViewController: UIViewController {
         bordersCollectionView.dataSource = self
         bordersCollectionView.register(UINib(nibName:"CountryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"CountryCollectionViewCell")
         
-        bordersCollectionView.isHidden = country?.borders == nil
+        borderView.isHidden = country?.borders == nil
+        borderViewSeparator.isHidden = country?.borders == nil
         
     }
     
@@ -55,8 +57,6 @@ class CountryDetailViewController: UIViewController {
             callingcodesLabel.text = country.callingCodes.joined(separator: ", ")
             languagesLabel.text = country.languages.compactMap({ $0.name }).joined(separator: ", ")
             currenciesLabel.text = country.currencies?.compactMap({ $0.name }).joined(separator: ", ")
-            independantLabel.text = String(country.independent)
-            
         }
     }
     

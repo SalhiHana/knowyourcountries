@@ -38,6 +38,7 @@ class RegisterViewController: UIViewController {
     
     func isValidPassword() -> Bool {
         guard let password = passwordTF.text else { return false }
+        if password.isEmpty {return false}
         let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
         let passwordPred = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return passwordPred.evaluate(with: password)
@@ -45,6 +46,7 @@ class RegisterViewController: UIViewController {
     
     func isValidRewritePassword() -> Bool {
         guard let rewritePasswordText = rewritePasswordTextField.text else { return false }
+        if rewritePasswordText.isEmpty {return false}
         guard let passwordText = passwordTF.text else { return false }
         return rewritePasswordText == passwordText
     }
@@ -84,47 +86,23 @@ class RegisterViewController: UIViewController {
     
     @IBAction func emailTextEditingChanged(_ sender: UITextField) {
         let isValidEmail = isValidEmail()
-        var textColor = UIColor.red
-        
-        if isValidEmail {
-            textColor = UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00)
-        } else {
-            textColor = .red
-        }
-        
-        let attributedText = NSMutableAttributedString(attributedString: sender.attributedText!)
-        attributedText.setAttributes([NSAttributedString.Key.foregroundColor : textColor], range: NSMakeRange(0, attributedText.length))
-        sender.attributedText = attributedText
+        sender.layer.borderWidth = 2
+        sender.layer.cornerRadius = 5
+        sender.layer.borderColor = (isValidEmail ? UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00) : UIColor.red).cgColor
     }
     
     @IBAction func passwordTextEditingChanged(_ sender: UITextField) {
         let isValidPassword = isValidPassword()
-        var textColor = UIColor.red
-        
-        if isValidPassword {
-            textColor = UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00)
-        } else {
-            textColor = .red
-        }
-        
-        let attributedText = NSMutableAttributedString(attributedString: sender.attributedText!)
-        attributedText.setAttributes([NSAttributedString.Key.foregroundColor : textColor], range: NSMakeRange(0, attributedText.length))
-        sender.attributedText = attributedText
+        sender.layer.borderWidth = 2
+        sender.layer.cornerRadius = 5
+        sender.layer.borderColor = (isValidPassword ? UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00) : UIColor.red).cgColor
     }
 
     @IBAction func rewritePasswordTextEditingChanged(_ sender: UITextField) {
        let isValidRewritePassword = isValidRewritePassword()
-       var textColor = UIColor.red
-       
-       if isValidRewritePassword {
-           textColor = UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00)
-       } else {
-           textColor = .red
-       }
-       
-       let attributedText = NSMutableAttributedString(attributedString: sender.attributedText!)
-       attributedText.setAttributes([NSAttributedString.Key.foregroundColor : textColor], range: NSMakeRange(0, attributedText.length))
-       sender.attributedText = attributedText
+        sender.layer.borderWidth = 2
+        sender.layer.cornerRadius = 5
+        sender.layer.borderColor = (isValidRewritePassword ? UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00) : UIColor.red).cgColor
     }
     
     @IBAction func dismissButtonPressed(_ sender: UIButton) {

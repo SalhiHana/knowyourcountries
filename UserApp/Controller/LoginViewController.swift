@@ -12,10 +12,10 @@ class LoginViewController: UIViewController {
     
     let realm = try! Realm()
     
-    @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var logoImage: UIImageView!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTF: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
           return .lightContent
@@ -63,34 +63,19 @@ class LoginViewController: UIViewController {
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         
         let isValidEmail = isValidEmail()
-        var textColor = UIColor.red
-        
-        if isValidEmail {
-            textColor = UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00)
-        } else {
-            textColor = .red
-        }
-        
-        let attributedText = NSMutableAttributedString(attributedString: sender.attributedText!)
-        attributedText.setAttributes([NSAttributedString.Key.foregroundColor : textColor], range: NSMakeRange(0, attributedText.length))
-        sender.attributedText = attributedText
+        sender.layer.borderWidth = 2
+        sender.layer.cornerRadius = 5
+        sender.layer.borderColor = (isValidEmail ? UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00) : UIColor.red).cgColor
         
     }
     
     @IBAction func passwordFieldEditingChanged(_ sender: UITextField) {
         
         let isValidPassword = isValidPassword()
-        var textColor = UIColor.red
+        sender.layer.borderWidth = 2
+        sender.layer.cornerRadius = 5
+        sender.layer.borderColor = (isValidPassword ? UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00) : UIColor.red).cgColor
         
-        if isValidPassword {
-            textColor = UIColor(red: 0.09, green: 0.63, blue: 0.52, alpha: 1.00)
-        } else {
-            textColor = .red
-        }
-        
-        let attributedText = NSMutableAttributedString(attributedString: sender.attributedText!)
-        attributedText.setAttributes([NSAttributedString.Key.foregroundColor : textColor], range: NSMakeRange(0, attributedText.length))
-        sender.attributedText = attributedText
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {

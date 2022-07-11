@@ -21,6 +21,8 @@ class CountryCollectionViewCell: UICollectionViewCell {
         guard let countryFlagImageView = countryFlagImageView else { return }
         
         countryFlagImageView.layer.masksToBounds = false
+        countryFlagImageView.layer.borderColor = UIColor(named: "primaryColor")?.cgColor
+        countryFlagImageView.layer.borderWidth = 1
         countryFlagImageView.layer.cornerRadius = countryFlagImageView.frame.height / 2.0
         countryFlagImageView.clipsToBounds = true
     }
