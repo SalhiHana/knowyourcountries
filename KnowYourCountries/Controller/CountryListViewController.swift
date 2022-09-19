@@ -79,6 +79,7 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         }
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as? CountryTableViewCell {
             cell.configure(country: data)
+            cell.delegate = self
             return cell
         }
         
@@ -93,6 +94,7 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
          countryDetailViewController.country = isSearching ? filteredCountries[indexPath.row] : countries[indexPath.row]
         countryDetailViewController.countries = countries
+        countryDetailViewController.delegate = self
         navigationController?.pushViewController(countryDetailViewController, animated: true)
         
     }
@@ -127,5 +129,11 @@ extension UIViewController {
         let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
 
         return presentingIsModal || presentingIsNavigation || presentingIsTabBar
+    }
+}
+
+extension CountryListViewController: CountryTableViewDelegate {
+    func didTapFavorite() {
+        self.table.reloadData()
     }
 }

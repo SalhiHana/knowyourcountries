@@ -31,6 +31,7 @@ class CountryDetailViewController: UIViewController {
     
     var country: Country?
     var countries: Countries = []
+    var delegate: CountryTableViewDelegate?
     
     var borderIsClickable = true
     
@@ -44,6 +45,19 @@ class CountryDetailViewController: UIViewController {
         borderView.isHidden = country?.borders == nil
         borderViewSeparator.isHidden = country?.borders == nil
         
+    }
+    
+    private func setupNavigationBar(isFavorite: Bool?) {
+        let favoriteImageName = isFavorite == true ? "star.fill" : "star"
+        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: favoriteImageName), style: .plain, target: self, action: #selector(didTapFavorite))
+        navigationItem.rightBarButtonItem = favoriteButton
+        navigationController?.navigationBar.tintColor = UIColor(named: "primaryColor")
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "primaryColor") ?? UIColor()]
+
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
     }
     
     func configure() {
@@ -62,6 +76,7 @@ class CountryDetailViewController: UIViewController {
             
             setupMapView()
             setupImageView()
+            setupNavigationBar(isFavorite: Favorite.isFavorite(countryName: country.name))
         }
     }
     
@@ -106,6 +121,20 @@ class CountryDetailViewController: UIViewController {
         }
     }
     
+    @objc func didTapFavorite() {
+        guard let countryName = country?.name else {
+            return
+        }
+
+        if Favorite.isFavorite(countryName: countryName) == true {
+            Favorite.deleteFavorite(countryName: countryName)
+        } else {
+            Favorite.addFavorite(countryName: countryName)
+        }
+        
+        setupNavigationBar(isFavorite: Favorite.isFavorite(countryName: countryName))
+        delegate?.didTapFavorite()
+    }
 }
 
 extension CountryDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
