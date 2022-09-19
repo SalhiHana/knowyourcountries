@@ -102,6 +102,7 @@ class CountryDetailViewController: UIViewController {
             }
             
             self.mapView.setRegion(response.boundingRegion, animated: true)
+//            self.mapView.tintColor = UIColor(named: "backgroundColor")
         }
     }
     

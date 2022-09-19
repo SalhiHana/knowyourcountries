@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UserApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="KnowYourCountries" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="pFE-JK-dSt" id="69D-qg-LQ7"/>
                 <outlet property="loginButton" destination="5wD-mG-LU9" id="hi4-is-tdh"/>
@@ -35,7 +35,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5H1-fc-Tug">
                     <rect key="frame" x="41.5" y="378.5" width="331" height="139.5"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hana@live.fr" borderStyle="roundedRect" placeholder="Enter email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFE-JK-dSt" userLabel="Email">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFE-JK-dSt" userLabel="Email">
                             <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
                             <color key="backgroundColor" name="backgroundColor"/>
                             <color key="textColor" name="textColor"/>
@@ -50,7 +50,7 @@
                                 <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="5Iv-Py-wo0"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Allinone2010" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yi4-lH-Oon" userLabel="Password">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yi4-lH-Oon" userLabel="Password">
                             <rect key="frame" x="0.0" y="54" width="331" height="34"/>
                             <color key="backgroundColor" name="backgroundColor"/>
                             <color key="textColor" name="textColor"/>

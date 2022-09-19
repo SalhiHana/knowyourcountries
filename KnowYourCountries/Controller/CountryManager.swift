@@ -28,13 +28,9 @@ struct CountryManager {
                 if let error = error {
                     delegate?.didFailWithError(error: error)
                 }
-                if let safeData = data {
-                    let str = String(decoding: safeData, as: UTF8.self)
-                    if
-                        let utfData = str.data(using: .utf8),
-                        let countries = self.parseJSON(utfData) {
-                        self.delegate?.didFetchCountries(self, countries: countries)                        
-                    }
+                if let data = data,
+                   let countries = self.parseJSON(data) {
+                    self.delegate?.didFetchCountries(self, countries: countries)
                 }
             }
             

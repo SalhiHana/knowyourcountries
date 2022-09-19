@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryDetailViewController" customModule="UserApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryDetailViewController" customModule="KnowYourCountries" customModuleProvider="target">
             <connections>
                 <outlet property="areaLabel" destination="ick-xF-mIx" id="0jq-9G-kQn"/>
                 <outlet property="borderView" destination="nzf-KM-Ein" id="1Bk-ik-VTW"/>
@@ -614,7 +614,7 @@
             <color red="0.792156862745098" green="0.82352941176470584" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="valueColor">
-            <color red="0.44313725490196076" green="0.50980392156862742" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.44299998879432678" green="0.50999999046325684" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
