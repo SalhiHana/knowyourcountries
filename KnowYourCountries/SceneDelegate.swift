@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private var firstViewController: UIViewController {
-        let welcomeViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
+        let welcomeViewController = CountryListViewController(nibName: "CountryListViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: welcomeViewController)
         navigationController.modalPresentationStyle = .fullScreen
         return navigationController

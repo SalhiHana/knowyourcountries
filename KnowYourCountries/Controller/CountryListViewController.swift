@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  CountryListViewController.swift
 //  KnowYourCountries
 //
 //  Created by Hana Salhi on 2022-05-25.
@@ -8,7 +8,7 @@
 import UIKit
 //https://restcountries.com/v2/all
 
-class WelcomeViewController: UIViewController {
+class CountryListViewController: UIViewController {
     
     @IBOutlet private weak var table: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -26,16 +26,7 @@ class WelcomeViewController: UIViewController {
     
     var countries: Countries = []
     var filteredCountries: Countries = []
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-                let isLoggedIn = UserDefaults.standard.bool(forKey: SceneDelegate.isLoggedInKey)
-        if !isLoggedIn {
-            presentLoginView(animated: false)
-        }
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
@@ -50,11 +41,8 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style: .plain, target: self, action: #selector(didSelectLogout))
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
-        navigationItem.rightBarButtonItem = searchButton
-        navigationItem.leftBarButtonItem = logoutButton
-        
+        navigationItem.rightBarButtonItem = searchButton        
         navigationController?.navigationBar.tintColor = UIColor(named: "primaryColor")
                 
         navigationItem.title = "Country List"
@@ -66,28 +54,13 @@ class WelcomeViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
     }
     
-    @objc func didSelectLogout() {
-        UserDefaults.standard.set(false, forKey: SceneDelegate.isLoggedInKey)
-        presentLoginView(animated: true)
-    }
-    
     @objc func didTapSearchButton(_ sender: UIBarButtonItem) {
         isSearching.toggle()
         tableViewSafeAreaTopConstraint.isActive = !isSearching
         tableViewSearchBarTopConstraint.isActive = isSearching
     }
-    
-    func presentLoginView(animated: Bool) {
-        let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        loginViewController.modalPresentationStyle = .fullScreen
-        if animated {
-            loginViewController.modalTransitionStyle = .crossDissolve
-        }
-        navigationController?.present(loginViewController, animated: animated)
-    }
-    
 }
-extension WelcomeViewController: UITableViewDataSource, UITableViewDelegate {
+extension CountryListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let searchText = searchBar.text, !searchText.isEmpty {
@@ -125,7 +98,7 @@ extension WelcomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension WelcomeViewController: CountryManagerDelegate {
+extension CountryListViewController: CountryManagerDelegate {
     
     func didFetchCountries(_ countryManager: CountryManager, countries: Countries) {
         DispatchQueue.main.async {
@@ -139,7 +112,7 @@ extension WelcomeViewController: CountryManagerDelegate {
     }
 }
 
-extension WelcomeViewController: UISearchBarDelegate{
+extension CountryListViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredCountries = countries.filter({ $0.name.starts(with: searchText) })

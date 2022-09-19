@@ -10,22 +10,16 @@
 		AA0C716F286CF3D000E2E9F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C716E286CF3D000E2E9F8 /* SceneDelegate.swift */; };
 		AA103153284C498A00D1183D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103152284C498A00D1183D /* Country.swift */; };
 		AA103155284D346400D1183D /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA103154284D346400D1183D /* CountryManager.swift */; };
-		AA1C7F30282DA6AF00E951DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C7F2F282DA6AF00E951DF /* RegisterViewController.swift */; };
-		AA2F7475283E8D7900332A9C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F7474283E8D7900332A9C /* WelcomeViewController.swift */; };
+		AA2F7475283E8D7900332A9C /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F7474283E8D7900332A9C /* CountryListViewController.swift */; };
 		AA3D7F3828525FB000FBBEB7 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D7F3728525FAF00FBBEB7 /* CountryDetailViewController.swift */; };
 		AA4BFD68285D27CD00C21A50 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4BFD66285D27CD00C21A50 /* CountryCollectionViewCell.swift */; };
 		AA4BFD69285D27CD00C21A50 /* CountryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */; };
 		AA88F6CC286CFA1200A19AD3 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */; };
 		AA88F6CD286CFA1200A19AD3 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */; };
 		AA8C6B98A4AC18AEFF54CA3F /* Pods_KnowYourCountries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47AAE85F7EED8DCF339EB7 /* Pods_KnowYourCountries.framework */; };
-		AAEA9F1428356FCD00550A68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA9F1328356FCD00550A68 /* User.swift */; };
-		AAEB0079286CF66000CBA64F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB0078286CF66000CBA64F /* LoginViewController.xib */; };
-		AAEB007B286CF67000CBA64F /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007A286CF67000CBA64F /* RegisterViewController.xib */; };
-		AAEB007D286CF69400CBA64F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */; };
+		AAEB007D286CF69400CBA64F /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007C286CF69400CBA64F /* CountryListViewController.xib */; };
 		AAEB007F286CF6AD00CBA64F /* CountryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB007E286CF6AD00CBA64F /* CountryDetailViewController.xib */; };
 		AAF2F5D62817314B0089BC66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2F5D52817314B0089BC66 /* AppDelegate.swift */; };
-		AAF2F5DA2817314B0089BC66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2F5D92817314B0089BC66 /* LoginViewController.swift */; };
-		AAF2F5E02817314B0089BC66 /* UserApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAF2F5DE2817314B0089BC66 /* UserApp.xcdatamodeld */; };
 		AAF2F5E22817314C0089BC66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF2F5E12817314C0089BC66 /* Assets.xcassets */; };
 		AAF2F5E52817314C0089BC66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2F5E32817314C0089BC66 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -39,22 +33,16 @@
 		AA0C716E286CF3D000E2E9F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA103152284C498A00D1183D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		AA103154284D346400D1183D /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
-		AA1C7F2F282DA6AF00E951DF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		AA2F7474283E8D7900332A9C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		AA2F7474283E8D7900332A9C /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		AA3D7F3728525FAF00FBBEB7 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		AA4BFD66285D27CD00C21A50 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
-		AAEA9F1328356FCD00550A68 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AAEB0078286CF66000CBA64F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		AAEB007A286CF67000CBA64F /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		AAEB007C286CF69400CBA64F /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
 		AAEB007E286CF6AD00CBA64F /* CountryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDetailViewController.xib; sourceTree = "<group>"; };
 		AAF2F5D22817314B0089BC66 /* KnowYourCountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowYourCountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF2F5D52817314B0089BC66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAF2F5D92817314B0089BC66 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AAF2F5DF2817314B0089BC66 /* UserApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserApp.xcdatamodel; sourceTree = "<group>"; };
 		AAF2F5E12817314C0089BC66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF2F5E42817314C0089BC66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAF2F5E62817314C0089BC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,7 +107,6 @@
 				AAF2F5EC281862290089BC66 /* Controller */,
 				AAF2F5E12817314C0089BC66 /* Assets.xcassets */,
 				AAF2F5E62817314C0089BC66 /* Info.plist */,
-				AAF2F5DE2817314B0089BC66 /* UserApp.xcdatamodeld */,
 			);
 			path = KnowYourCountries;
 			sourceTree = "<group>";
@@ -127,9 +114,7 @@
 		AAF2F5EC281862290089BC66 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AAF2F5D92817314B0089BC66 /* LoginViewController.swift */,
-				AA1C7F2F282DA6AF00E951DF /* RegisterViewController.swift */,
-				AA2F7474283E8D7900332A9C /* WelcomeViewController.swift */,
+				AA2F7474283E8D7900332A9C /* CountryListViewController.swift */,
 				AA88F6CA286CFA1200A19AD3 /* CountryTableViewCell.swift */,
 				AA103154284D346400D1183D /* CountryManager.swift */,
 				AA3D7F3728525FAF00FBBEB7 /* CountryDetailViewController.swift */,
@@ -141,9 +126,7 @@
 		AAF2F5ED2818623B0089BC66 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAEB0078286CF66000CBA64F /* LoginViewController.xib */,
-				AAEB007A286CF67000CBA64F /* RegisterViewController.xib */,
-				AAEB007C286CF69400CBA64F /* WelcomeViewController.xib */,
+				AAEB007C286CF69400CBA64F /* CountryListViewController.xib */,
 				AAEB007E286CF6AD00CBA64F /* CountryDetailViewController.xib */,
 				AA88F6CB286CFA1200A19AD3 /* CountryTableViewCell.xib */,
 				AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */,
@@ -155,7 +138,6 @@
 		AAF2F5EE2818625E0089BC66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAEA9F1328356FCD00550A68 /* User.swift */,
 				AA103152284C498A00D1183D /* Country.swift */,
 			);
 			name = Model;
@@ -221,14 +203,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAEB0079286CF66000CBA64F /* LoginViewController.xib in Resources */,
-				AAEB007D286CF69400CBA64F /* WelcomeViewController.xib in Resources */,
+				AAEB007D286CF69400CBA64F /* CountryListViewController.xib in Resources */,
 				AAF2F5E52817314C0089BC66 /* LaunchScreen.storyboard in Resources */,
 				AA4BFD69285D27CD00C21A50 /* CountryCollectionViewCell.xib in Resources */,
 				AAF2F5E22817314C0089BC66 /* Assets.xcassets in Resources */,
 				AA88F6CD286CFA1200A19AD3 /* CountryTableViewCell.xib in Resources */,
 				AAEB007F286CF6AD00CBA64F /* CountryDetailViewController.xib in Resources */,
-				AAEB007B286CF67000CBA64F /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,17 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF2F5E02817314B0089BC66 /* UserApp.xcdatamodeld in Sources */,
 				AA4BFD68285D27CD00C21A50 /* CountryCollectionViewCell.swift in Sources */,
 				AA103153284C498A00D1183D /* Country.swift in Sources */,
-				AAEA9F1428356FCD00550A68 /* User.swift in Sources */,
 				AA3D7F3828525FB000FBBEB7 /* CountryDetailViewController.swift in Sources */,
-				AA1C7F30282DA6AF00E951DF /* RegisterViewController.swift in Sources */,
-				AAF2F5DA2817314B0089BC66 /* LoginViewController.swift in Sources */,
 				AA88F6CC286CFA1200A19AD3 /* CountryTableViewCell.swift in Sources */,
 				AA103155284D346400D1183D /* CountryManager.swift in Sources */,
 				AAF2F5D62817314B0089BC66 /* AppDelegate.swift in Sources */,
-				AA2F7475283E8D7900332A9C /* WelcomeViewController.swift in Sources */,
+				AA2F7475283E8D7900332A9C /* CountryListViewController.swift in Sources */,
 				AA0C716F286CF3D000E2E9F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,19 +480,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AAF2F5DE2817314B0089BC66 /* UserApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AAF2F5DF2817314B0089BC66 /* UserApp.xcdatamodel */,
-			);
-			currentVersion = AAF2F5DF2817314B0089BC66 /* UserApp.xcdatamodel */;
-			path = UserApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AAF2F5CA2817314B0089BC66 /* Project object */;
 }
