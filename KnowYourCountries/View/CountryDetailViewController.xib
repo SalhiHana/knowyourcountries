@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,13 +36,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="StW-pw-c7E">
-                    <rect key="frame" x="8" y="44" width="398" height="200"/>
+                    <rect key="frame" x="8" y="48" width="398" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="lse-vs-hrk"/>
                     </constraints>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bP-Je-cC7">
-                    <rect key="frame" x="8" y="254" width="398" height="642"/>
+                    <rect key="frame" x="8" y="258" width="398" height="604"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sA9-Ce-5WK">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="964"/>
@@ -523,7 +524,7 @@
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-3a-cMl">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="150"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BORDING COUNTRIES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-Hb-SSZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEIGHBORING COUNTRIES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-Hb-SSZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="qQd-BP-IdC"/>
@@ -594,7 +595,7 @@
             <constraints>
                 <constraint firstItem="LNr-2z-hSt" firstAttribute="trailing" secondItem="StW-pw-c7E" secondAttribute="trailing" constant="8" id="3Gk-NY-QAC"/>
                 <constraint firstItem="StW-pw-c7E" firstAttribute="leading" secondItem="LNr-2z-hSt" secondAttribute="leading" constant="8" id="8P5-NE-T68"/>
-                <constraint firstItem="1bP-Je-cC7" firstAttribute="bottom" secondItem="LNr-2z-hSt" secondAttribute="bottom" constant="34" id="L3p-qC-a8M"/>
+                <constraint firstItem="1bP-Je-cC7" firstAttribute="bottom" secondItem="LNr-2z-hSt" secondAttribute="bottom" id="L3p-qC-a8M"/>
                 <constraint firstItem="1bP-Je-cC7" firstAttribute="top" secondItem="StW-pw-c7E" secondAttribute="bottom" constant="10" id="ZUr-63-wRX"/>
                 <constraint firstItem="LNr-2z-hSt" firstAttribute="trailing" secondItem="1bP-Je-cC7" secondAttribute="trailing" constant="8" id="svR-kg-Ke5"/>
                 <constraint firstItem="StW-pw-c7E" firstAttribute="top" secondItem="LNr-2z-hSt" secondAttribute="top" id="vre-jj-Zry"/>

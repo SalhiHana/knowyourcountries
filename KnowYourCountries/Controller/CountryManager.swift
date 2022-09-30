@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol CountryManagerDelegate {
-    func didFetchCountries(_ countryManager: CountryManager, countries: Countries)
+    func didFetchCountries(countries: Countries)
     func didFailWithError(error: Error)
 }
 
@@ -30,7 +30,7 @@ struct CountryManager {
                 }
                 if let data = data,
                    let countries = self.parseJSON(data) {
-                    self.delegate?.didFetchCountries(self, countries: countries)
+                    self.delegate?.didFetchCountries(countries: countries)
                 }
             }
             

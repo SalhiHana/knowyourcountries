@@ -14,12 +14,14 @@ class CountryListViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableViewSafeAreaTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableViewSearchBarTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var emptyLabel: UILabel!
+    
+    var searchButton: UIBarButtonItem?
     var countryManager = CountryManager()
     var isSearching = false
     
     var countries: Countries = []
-    var filteredCountries: Countries = []
-    
+    var filteredCountries: Countries = []    
     var segmentedControl: UISegmentedControl?
     
     override func viewDidLoad() {
@@ -28,15 +30,16 @@ class CountryListViewController: UIViewController {
         table.delegate = self
         searchBar.delegate = self
         
-        countryManager.delegate = self
+        countryManager.delegate = self //CountryListViewController is your assistant
         countryManager.fetchCountries()
+        
         table.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: "CountryTableViewCell")
         
-        setUpSegmentedControl()
+        setupSegmentedControl()
         setupNavigationBar()
     }
     
-    private func setUpSegmentedControl() {
+    private func setupSegmentedControl() {
         segmentedControl = UISegmentedControl (items: ["All","Favorites"])
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl?.backgroundColor = UIColor(named: "primaryColor")
@@ -44,11 +47,12 @@ class CountryListViewController: UIViewController {
     }
     
     @objc func segmentedValueChanged() {
+        emptyLabel.text = segmentedControl?.selectedSegmentIndex == 0 ? "No Countries" : "No Favorites"
         table.reloadData()
     }
     
     private func setupNavigationBar() {
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
+        searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearchButton))
         navigationItem.rightBarButtonItem = searchButton
         navigationController?.navigationBar.tintColor = UIColor(named: "primaryColor")
         
@@ -62,6 +66,11 @@ class CountryListViewController: UIViewController {
     
     @objc func didTapSearchButton(_ sender: UIBarButtonItem) {
         isSearching.toggle()
+        if !isSearching {
+            searchBar.resignFirstResponder()
+        } else {
+            searchBar.becomeFirstResponder()
+        }
         tableViewSafeAreaTopConstraint.isActive = !isSearching
         tableViewSearchBarTopConstraint.isActive = isSearching
     }
@@ -93,7 +102,19 @@ class CountryListViewController: UIViewController {
 extension CountryListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        getCountries?.count ?? 0
+        let countries = getCountries
+        if countries?.isEmpty == true {
+            emptyLabel.isHidden = false
+            tableView.isHidden = true
+            searchBar.isHidden = true
+            navigationItem.rightBarButtonItem = nil
+        } else {
+            emptyLabel.isHidden = true
+            tableView.isHidden = false
+            searchBar.isHidden = false
+            navigationItem.rightBarButtonItem = searchButton
+        }
+        return countries?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,23 +136,29 @@ extension CountryListViewController: UITableViewDataSource, UITableViewDelegate 
         guard let countries = getCountries else { return }
         let countryDetailViewController = CountryDetailViewController(nibName: "CountryDetailViewController", bundle: nil)
         countryDetailViewController.country = countries[indexPath.row]
-        countryDetailViewController.countries = countries
+        countryDetailViewController.countries = self.countries
         countryDetailViewController.delegate = self
         navigationController?.pushViewController(countryDetailViewController, animated: true)
+        searchBar.resignFirstResponder()
     }
 }
 
 extension CountryListViewController: CountryManagerDelegate {
     
-    func didFetchCountries(_ countryManager: CountryManager, countries: Countries) {
+    func didFetchCountries(countries: Countries) {
         DispatchQueue.main.async {
             self.countries = countries
             self.filteredCountries = countries
             self.table.reloadData()
         }
     }
+
     func didFailWithError(error: Error) {
-        print(error)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     }
 }
 
@@ -140,6 +167,10 @@ extension CountryListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredCountries = countries.filter({ $0.name.starts(with: searchText) })
         table.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
