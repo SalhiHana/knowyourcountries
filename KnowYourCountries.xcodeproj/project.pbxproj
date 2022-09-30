@@ -105,15 +105,15 @@
 				AAF2F5D52817314B0089BC66 /* AppDelegate.swift */,
 				AA0C716E286CF3D000E2E9F8 /* SceneDelegate.swift */,
 				AAF2F5EE2818625E0089BC66 /* Model */,
-				AAF2F5ED2818623B0089BC66 /* View */,
-				AAF2F5EC281862290089BC66 /* Controller */,
+				AAF2F5ED2818623B0089BC66 /* Xib */,
+				AAF2F5EC281862290089BC66 /* ViewController */,
 				AAF2F5E12817314C0089BC66 /* Assets.xcassets */,
 				AAF2F5E62817314C0089BC66 /* Info.plist */,
 			);
 			path = KnowYourCountries;
 			sourceTree = "<group>";
 		};
-		AAF2F5EC281862290089BC66 /* Controller */ = {
+		AAF2F5EC281862290089BC66 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AA2F7474283E8D7900332A9C /* CountryListViewController.swift */,
@@ -122,10 +122,10 @@
 				AA3D7F3728525FAF00FBBEB7 /* CountryDetailViewController.swift */,
 				AA4BFD66285D27CD00C21A50 /* CountryCollectionViewCell.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		AAF2F5ED2818623B0089BC66 /* View */ = {
+		AAF2F5ED2818623B0089BC66 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
 				AAEB007C286CF69400CBA64F /* CountryListViewController.xib */,
@@ -134,7 +134,7 @@
 				AA4BFD67285D27CD00C21A50 /* CountryCollectionViewCell.xib */,
 				AAF2F5E32817314C0089BC66 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		AAF2F5EE2818625E0089BC66 /* Model */ = {
